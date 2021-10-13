@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+    <link rel="stylesheet" href="/main.css">
+
+</head>
+
+<body>
+
+    <div class="details">
+
+        <div class="upDetails">
+            <div class="detailsName">
+                <div class="contentDaneTab">
+                    <th:block th:each="simulationModels : ${simulationModel}">
+                        <ul>
+                            <li class="con1">
+                                <p th:text="${simulationModel.name}"  class="vinyl-title">10</p>
+                            </li>
+
+                        </ul>
+                    </th:block>
+                </div>
+            </div>
+            <div class="detailsParameter">
+                <div class="doZrobienia">
+                    <div class="contentDaneTab">
+                        <th:block th:each="simulationModels : ${simulationModel}">
+                            <ul>
+                                <li class="con1">
+                                    <p th:text="${simulationModel.name}"  class="vinyl-title">10</p>
+                                </li>
+                            </ul>
+                        </th:block>
+                    </div>
+                </div>
+            </div>
+            <div class="editButton">
+                <a th:href="@{/edit/{name}(name=${simulationModel.name})} ">edytuj</a>
+            </div>
+        </div>
+        <div class="downDetails">
+            <div class="detailsNavi">
+                    <div class="contentDaneTab">
+                        <th:block th:each="simulationModels : ${simulationModel}">
+                        <ul>
+                            <li class="con1">
+                                <p th:text="${simulationModel.name}"  class="vinyl-title">10</p>
+                            </li>
+                            <li class="con2">
+                                <p th:text="${simulationModel.population_P}" class="vinyl-title">10</p>
+                            </li>
+                            <li class="con3">
+                                <p th:text="${simulationModel.startInfected_I}"  class="vinyl-title">10</p>
+                            </li>
+                            <li class="con4">
+                                <p th:text="${simulationModel.factor_R}"  class="vinyl-title">10</p>
+                            </li>
+                            <li class="con5">
+                                <p th:text="${simulationModel.mortalityFactor_M}"   class="vinyl-title">10</p>
+                            </li>
+                            <li class="con6">
+                                <p th:text="${simulationModel.recoveryTime_Ti}"  class="vinyl-title">10</p>
+                            </li>
+                            <li class="con7">
+                                <p th:text="${simulationModel.mortalityTime_Tm}"   class="vinyl-title">10</p>
+                            </li>
+                            <li class="con8">
+                                <p th:text="${simulationModel.simulationDays_Ts}"  class="vinyl-title">10</p>
+                            </li>
+                        </ul>
+                        </th:block>
+                    </div>
+            </div>
+            <div class="detailsContent">
+                <div class="detailsTab">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

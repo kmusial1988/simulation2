@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org/">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+    <link rel="stylesheet" href="/main.css">
+
+</head>
+
+<body>
+    <div class="mainView">
+        <div class="mainUp">
+            <div class="logo">
+                <p>covidSymulation</p>
+            </div>
+            <div class="navi">
+                <nav>
+                    <ul>
+                        <li class="nav0">Main</li>
+                        <li class="nav1">Dodaj</li>
+
+                </nav>
+            </div>
+
+        </div>
+        <div class="editDown">
+            <div class="editAdd">
+                <form method="post" id="edit-form" >
+
+                    <div th:if="${info !=null}" th:text ="${info}" id="info"></div>
+                    <input type="text" placeholder="N-Nazwa" class="text-input" th:field="${simulationModel.name}" disabled>
+                    <input type="text" placeholder="P-wielkość populacji" class="text-input" th:field="${simulationModel.population_P}">
+                    <input type="text" placeholder="I-początkowa liczba zakażonych" class="text-input" th:field="${simulationModel.startInfected_I}">
+                    <input type="text" placeholder="R-wskaźnik R" class="text-input" th:field="${simulationModel.factor_R}">
+                    <input type="text" placeholder="M-wskaźnik śmiertelności" class="text-input" th:field="${simulationModel.mortalityFactor_M}">
+                    <input type="text" placeholder="Ti-czas (dni) choroby" class="text-input" th:field="${simulationModel.recoveryTime_Ti}">
+                    <input type="text" placeholder="Tm-czas (dni) do śmierci" class="text-input" th:field="${simulationModel.mortalityTime_Tm}">
+                    <input type="text" placeholder="Ts-Ilość dni symulacji" class="text-input" th:field="${simulationModel.simulationDays_Ts}">
+
+                    <input type="submit" value="Przelicz Ponownie" id="form-submit">
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- <footer>
+            bezroCompany
+        </footer> -->
+    </div>
+
+
+
+</body>
+
+</html>

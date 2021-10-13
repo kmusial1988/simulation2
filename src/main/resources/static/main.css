@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mainView {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainUp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 65vh;
+    border-bottom: solid black 2px;
+    z-index: 2;
+}
+
+.logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    line-height: 20vh;
+    font-size: 10vh;
+    color: rgb(168, 103, 79);
+    letter-spacing: 3px;
+    background-color: grey;
+}
+
+.navi {
+    position: fixed;
+    top: 20vh;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 10vh;
+    justify-content: center;
+}
+
+.navi ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-basis: 80vw;
+    list-style: none;
+    width: 100%;
+}
+
+.navi ul a {
+    display: flex;
+    flex-basis: 40vw;
+    font-size: 5vh;
+    align-items: flex-start;
+    margin-left: 3%;
+    cursor:pointer;
+}
+
+.search {
+    position: fixed;
+    top: 30vh;
+    left: 0;
+    right: 0;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3vh;
+    border-bottom: solid 2px black;
+}
+
+.mainDown {
+    position: absolute;
+    top: 40vh;
+    left: 10vw;
+    right: 10vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.contentNavi ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    list-style: none;
+    flex-basis: 100%;
+    width: 100%;
+    justify-content: center;
+    height: 7vh;
+}
+
+.contentNavi ul li {
+    display: flex;
+    flex-basis: 50vw;
+}
+
+.contentDane {
+    position: absolute;
+    top: 5vh;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.contentDaneTab {
+    display: flex;
+    flex-direction: column;
+    border: black solid 1px;
+    padding: 3%;
+    margin-bottom: 2vh;
+}
+
+.contentDaneTab ul {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    height: 5vh;
+}
+
+.contentDaneTab ul li {
+    display: flex;
+    flex-basis: 50vw;
+}
+
+.tabButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.tabButton a {
+    display: flex;
+    padding: 1vh 2vw;
+    border: solid black 2px;
+    margin-left: 5vw;
+    cursor: pointer;
+}
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! szczegóły !!!!!!!!!!!!!!!!!!! */
+
+.details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.upDetails {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    height: 34vh;
+}
+
+.detailsName {
+    display: flex;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(168, 168, 168);
+    color: chartreuse;
+}
+
+.detailsName p {
+    font-size: 10vh;
+}
+
+.detailsParameter {
+    display: flex;
+    height: 10vh;
+    background-color: rgb(59, 59, 59);
+    color: cornsilk;
+}
+
+.editButton {
+    display: flex;
+    height: 5vh;
+    background-color: rgb(160, 160, 160);
+    justify-content: center;
+    align-items: center;
+}
+
+.editButton a {
+    display: block;
+    height: 3vh;
+    width: 20vh;
+    background-color: black;
+    color: white;
+    line-height: 3vh;
+    border: cornsilk 2px solid;
+    cursor: pointer;
+}
+
+.downDetails {
+    position: absolute;
+    top: 35vh;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.detailsNavi {
+    position: fixed;
+    top: 35vh;
+    left: 10%;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.detailsNavi ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.detailsNavi ul li {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgb(134, 91, 91);
+    height: 3vh;
+    flex-basis: 18%;
+    line-height: 3vh;
+}
+
+.detailsContent {
+    position: absolute;
+    top: 30vh;
+    left: 10%;
+    right: 10%;
+}
+
+.detailsTab ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    list-style: none;
+    height: 10vh;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.detailsTab ul li {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgb(134, 91, 91);
+    height: 3vh;
+    flex-basis: 18%;
+    line-height: 3vh;
+}
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!  EDIT !!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.editDown {
+    background-color: grey;
+    position: absolute;
+    top: 40vh;
+    left: 10%;
+    right: 10%;
+}
+
+.editAdd form {
+    display: flex;
+    flex-direction: column;
+}
+
+.editAdd form p {
+    height: 5vh;
+}
+
+.editAdd form input {
+    height: 5vh;
+}
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!  ADD !!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.addDown {
+    background-color: grey;
+    position: absolute;
+    top: 40vh;
+    left: 10%;
+    right: 10%;
+}
+
+.addAdd form {
+    display: flex;
+    flex-direction: column;
+}
+
+.addAdd form p {
+    height: 5vh;
+}
+
+.addAdd form input {
+    height: 5vh;
+}

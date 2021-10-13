@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="/main.css">
+
+</head>
+
+<body>
+    <div class="mainView">
+        <div class="mainUp">
+            <div class="logo">
+                <p>covidSymulation</p>
+            </div>
+            <div class="navi">
+                <nav>
+                    <ul>
+                        <a th:href class="nav1" href="/add">Dodaj</a>
+                    </ul>
+                </nav>
+            </div>
+            <div class="search">
+                <form method="post" action="/filter">
+                    <input type="text" placeholder="nazwa symulacji" name="filter" th:value="${filter}">
+                    <input type="submit" value="search">
+                </form>
+            </div>
+        </div>
+        <div class="mainDown">
+            <div class="content">
+                <div class="contentNavi">
+                    <nav>
+                        <ul>
+                            <li class="conNav1">N - Name</li>
+                            <li class="conNav2">P - Population</li>
+                            <li class="conNav3">I - Start Infected</li>
+                            <li class="conNav4">R - Factor R</li>
+                            <li class="conNav5">M - Factor Mortality</li>
+                            <li class="conNav6">Ti - Time to Good</li>
+                            <li class="conNav7">Tm - Time to Day </li>
+                            <li class="conNav8">Ts - Day Simulation</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="contentDane">
+                    <th:block th:each="simulationModel : ${simulationModels}">
+                    <div class="contentDaneTab">
+                        <ul>
+                            <li class="con1">
+
+                                <p th:text="${simulationModel.name}"
+                                   class="title">10</p>
+                            </li>
+                            <li class="con2">
+                                <p th:text="${simulationModel.population_P}"
+                                   class="title">10</p>
+                            </li>
+                            <li class="con3">
+                                <p th:text="${simulationModel.startInfected_I}"
+                                   class="title">10</p>
+                            </li>
+                            <li class="con4">
+                                <p th:text="${simulationModel.factor_R}"
+                                   class="title">10</p>
+                            </li>
+                            <li class="con5">
+                                <p th:text="${simulationModel.mortalityFactor_M}"
+                                   class="title">10</p>
+                            </li>
+                            <li class="con6">
+                                <p th:text="${simulationModel.recoveryTime_Ti}"
+                                   class="title">10</p>
+                            </li>
+                            <li class="con7">
+                                <p th:text="${simulationModel.mortalityTime_Tm}"
+                                   class="title">10</p>
+                            </li>
+                            <li class="con8">
+                                <p th:text="${simulationModel.simulationDays_Ts}"
+                                   class="title">10</p>
+                            </li>
+                        </ul>
+                        <div class="tabButton">
+                            <a th:href="@{/details/{name}(name=${simulationModel.name})} ">details</a>
+                            <a th:href="@{/edit/{name}(name=${simulationModel.name})} ">edit</a>
+                            <a>delate</a>
+                        </div>
+                    </div>
+                    </th:block>
+                </div>
+            </div>
+        </div>
+
+        <!-- <footer>
+            bezroCompany
+        </footer> -->
+    </div>
+
+
+
+</body>
+
+</html>
